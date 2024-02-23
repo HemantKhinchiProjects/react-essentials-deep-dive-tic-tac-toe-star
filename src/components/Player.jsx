@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Player({ initialName, symbol }) {
+export default function Player({ initialName, symbol, isActive }) {
   const [name, setName] = useState(initialName);
   const [isEditing, setIsEditing] = useState(false);
   const HandleClick = () => {
@@ -20,7 +20,7 @@ export default function Player({ initialName, symbol }) {
     // let buttonCaption = "Save";
   }
   return (
-    <li>
+    <li className={isActive ? "active" : undefined}>
       <span className="player">
         {PlayerName}
         <span className="player-symbol">{symbol}</span>
