@@ -9,7 +9,9 @@ export default function GameBoard({ onSelectSquare, activePlayerSymbol }) {
   const [gameBoard, setGameBoard] = useState(initialGameBoard);
   const handleSelectSquare = (rowIndex, cellIndex) => {
     setGameBoard((previousGameBoard) => {
-      const newGameBoard = [...previousGameBoard.map((row) => [...row])];
+      const newGameBoard = [
+        ...previousGameBoard.map((innerArray) => [...innerArray]),
+      ];
       newGameBoard[rowIndex][cellIndex] = activePlayerSymbol;
       return newGameBoard;
     });
